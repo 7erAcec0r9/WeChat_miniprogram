@@ -1,0 +1,14 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{false}}">
+    <view slot="content">首页</view>
+</cu-custom>
+
+<scroll-view scroll-y class="scrollPage">
+    <view class='nav-list'>
+        <navigator hover-class='none' url="/pages/lists/{{item.name}}/{{item.name}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key="*this" style="margin-top: 40rpx">
+            <view class="nav-title">{{item.title}}</view>
+            <view class="nav-name">{{item.name}}</view>
+            <text class='cuIcon-{{item.icon}}'></text>
+        </navigator>
+    </view>
+    <view class='cu-tabbar-height'></view>
+</scroll-view>

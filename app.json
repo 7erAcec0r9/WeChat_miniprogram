@@ -2,11 +2,14 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/lists/allrequest/allrequest",
+    "pages/lists/newrequest/newrequest",
+    "pages/lists/home/home"
   ],
   "window": {
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#39b54a",
     "navigationBarTitleText": "Weixin",
     "navigationStyle": "custom",
     "navigationBarTextStyle":"black"
