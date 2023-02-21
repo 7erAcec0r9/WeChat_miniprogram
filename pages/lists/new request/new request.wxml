@@ -1,0 +1,72 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">新的申请</view>
+</cu-custom>
+
+<form bindsubmit="formSubmit">
+    <view class="cu-bar bg-white margin-top">
+        <view class="action sub-title">
+            <text class="text-xl text-bold text-green">用户信息</text>
+            <text class="bg-green"></text>
+            <!-- last-child选择器-->
+        </view>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">用户ID</view>
+        <view class="text-content">{{userData.userID}}</view>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">用户名称</view>
+        <view class="text-content">{{userData.userName}}</view>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">用户类别</view>
+        <view class="text-content">{{identity}}</view>
+    </view>
+
+    <view class="cu-bar bg-white margin-top">
+        <view class="action sub-title">
+            <text class="text-xl text-bold text-green">申请信息</text>
+            <text class="bg-green"></text>
+            <!-- last-child选择器-->
+        </view>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">请假日期</view>
+        <picker mode="date" value="{{date1}}" start="{{date_start}}" end="{{date_end}}" bindchange="dateChange1">
+            <view class="picker">
+                {{date1}}
+            </view>
+        </picker>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">结束日期</view>
+        <picker mode="date" value="{{date2}}" start="{{date1}}" end="{{date_end}}" bindchange="dateChange2">
+            <view class="picker">
+                {{date2}}
+            </view>
+        </picker>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">联系电话</view>
+        <view class="action">
+            <input name="phonenumber" placeholder="请输入联系电话"></input>
+        </view>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">地址选择</view>
+        <picker mode="region" bindchange="regionChange" value="{{region}}" custom-item="{{customItem}}">
+            <view class="picker">
+                {{region[0]}}，{{region[1]}}，{{region[2]}}
+            </view>
+        </picker>
+    </view>
+    <view class="cu-form-group align-start">
+        <view class="title">请假理由</view>
+        <textarea maxlength="200" disabled="{{false}}" bind:blur="reasonInput" bind:confirm="reasonInput" placeholder="请输入请假理由（小于200字）" confirm-type="done"></textarea>
+    </view>
+
+    <view class="padding flex flex-direction">
+        <button class="cu-btn bg-green lg shadow" type="primary" formType="submit" style="margin-top: 30rpx">提交</button>
+    </view>
+</form>

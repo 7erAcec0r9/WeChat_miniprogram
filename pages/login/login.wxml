@@ -8,11 +8,11 @@
     <view class="page-section">
         <view class="cu-form-group margin-top">
             <view class="title">用户名</view>
-            <input name="username" placeholder="请输入用户名" />
+            <input name="username" placeholder="请输入用户名"></input>
         </view>
         <view class="cu-form-group">
             <view class="title">密码</view>
-            <input name="pwd" placeholder="请输入密码" />
+            <input name="pwd" placeholder="请输入密码"></input>
         </view>
         <view class="cu-form-group">
             <view class="title">身份</view>

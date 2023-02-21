@@ -1,0 +1,51 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">申请审批</view>
+</cu-custom>
+
+<view class="cu-list menu sm-border card-menu margin-top bg-blue light"
+      wx:for="{{requestLists}}" wx:key="*this">
+    <view class="cu-item">
+        <view class="content">
+            <text class="cuIcon-calendar text-blue"></text>
+            <text class="text-black text-lg">请假时间</text>
+        </view>
+        <view class="action">
+            <text class="text-black text-lg">{{item.date_start}} ~ {{item.date_end}}</text>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content">
+            <text class="cuIcon-my text-blue"></text>
+            <text class="text-black">申请人</text>
+        </view>
+        <view class="action">
+            <text class="text-black text-lg">{{item.username}}</text>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content padding-tb-sm">
+            <view>
+                <text class="cuIcon-my text-blue"></text>
+                <text class="text-black">申请原因</text>
+            </view>
+            <view class="text-black text-lg margin-top-sm">
+                <textarea maxlength="-1" disabled placeholder="{{item.reason}}"></textarea>
+            </view>
+        </view>
+    </view>
+
+    <view class="cu-item">
+        <view class="content">
+            <text class="cuIcon-edit text-blue"></text>
+            <text class="text-black">状态</text>
+        </view>
+        <view class="action">
+            <view class="cu-btn round bg-orange light text-lg">{{item.status}}</view>
+        </view>
+    </view>
+    <view class="cu-item">
+        <button class="cu-btn bg-red shadow" style="margin: 5rpx" bindtap="denied" data-index="{{index}}">不通过</button>
+        <button class="cu-btn bg-green shadow" style="margin: 5rpx" bindtap="passed" data-index="{{index}}">通过</button>
+    </view>
+</view>

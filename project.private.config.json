@@ -14,6 +14,34 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "newrequest",
+          "pathName": "pages/lists/newrequest/newrequest",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "allrequest",
+          "pathName": "pages/lists/allrequest/allrequest",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "home",
+          "pathName": "pages/lists/home/home",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "request verify",
+          "pathName": "pages/lists/request verify/request verify",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

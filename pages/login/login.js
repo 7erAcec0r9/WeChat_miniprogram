@@ -1,4 +1,5 @@
 let gData;
+let app = getApp();
 Page({
     data: {
         index: '',
@@ -13,8 +14,46 @@ Page({
     },
 
     formSubmit(e){
-        console.log('form发生了submit事件，携带数据为：', e.detail.value);
-        console.log('identity', this.data.index);
+        // console.log('form发生了submit事件，携带数据为：', e.detail.value);
+        // console.log('identity', this.data.index);
+        var userId = e.detail.value["username"];
+        var password = e.detail.value["pwd"];
+        var identity = this.data.index;
+        if(userId !== '' && password !== '' && identity !== ''){
+            wx.request( {
+                method: 'GET',
+                url: 'http://localhost:8000/login',
+                data: {
+                    userid: userId,
+                    userpwd: password,
+                    id: identity
+                },
+                success: function (res){
+                    let resMessage = res.data;
+                    // 返回{"userID": userid, "userName": username, "userpwd": userpwd, "ID": id, "code": code}
+                    // code == 1 时登录成功
+                    if(resMessage.code){
+                        wx.setStorageSync("userData", resMessage);
+                        wx.showToast({
+                            title: "登录成功",
+                            icon: "success",
+                            duration: 2000
+                        });
+                        setTimeout(function (){
+                            wx.navigateTo({
+                                url: "../index/index"
+                            });
+                        }, 2000);
+                    } else {
+                        wx.showToast({
+                            title: "登录失败",
+                            icon: "error",
+                            duration: 2000
+                        });
+                    }
+                }
+            })
+        }
     },
 
     formReset: function(){

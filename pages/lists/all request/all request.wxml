@@ -1,0 +1,65 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">所有申请</view>
+</cu-custom>
+
+<view class="cu-list menu sm-border card-menu margin-top bg-blue light"
+      wx:for="{{requestLists}}" wx:key="*this">
+    <view class="cu-item">
+        <view class="content">
+            <text class="cuIcon-calendar text-blue"></text>
+            <text class="text-black text-lg">请假时间</text>
+        </view>
+        <view class="action">
+            <text class="text-black text-lg">{{item.date_start}} ~ {{item.date_end}}</text>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content">
+            <text class="cuIcon-my text-blue"></text>
+            <text class="text-black">申请人</text>
+        </view>
+        <view class="action">
+            <text class="text-black text-lg">{{item.username}}</text>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content">
+            <text class="cuIcon-phone text-blue"></text>
+            <text class="text-black">联系电话</text>
+        </view>
+        <view class="action">
+            <text class="text-black text-lg">{{item.phonenumber}}</text>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content">
+            <text class="cuIcon-location text-blue"></text>
+            <text class="text-black">地点</text>
+        </view>
+        <view class="action">
+            <text class="text-black text-lg">{{item.location}}</text>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content">
+            <text class="cuIcon-edit text-blue"></text>
+            <text class="text-black">状态</text>
+        </view>
+        <view class="action">
+            <view wx:if="{{item.status === '通过'}}" class="cu-btn round bg-gradual-green light text-lg">{{item.status}}</view>
+            <view wx:if="{{item.status === '未通过'}}" class="cu-btn round bg-gradual-red light text-lg">{{item.status}}</view>
+            <view wx:if="{{item.status === '审核中'}}" class="cu-btn round bg-orange light text-lg">{{item.status}}</view>
+        </view>
+    </view>
+    <!--
+    <view class="cu-item arrow">
+        <view class="content">
+
+        </view>
+        <view class="action">
+            <text class="text-gray text-lg text-bold" bindtap="moreInfo">详情</text>
+        </view>
+    </view>
+    -->
+</view>

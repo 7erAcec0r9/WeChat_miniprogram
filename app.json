@@ -3,9 +3,10 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/login/login",
-    "pages/lists/allrequest/allrequest",
-    "pages/lists/newrequest/newrequest",
-    "pages/lists/home/home"
+    "pages/lists/all request/all request",
+    "pages/lists/new request/new request",
+    "pages/lists/home/home",
+    "pages/lists/request verify/request verify"
   ],
   "window": {
     "backgroundTextStyle":"light",

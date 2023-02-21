@@ -1,16 +1,22 @@
-<cu-custom bgColor="bg-gradual-pink" isBack="{{false}}">
+<cu-custom bgColor="bg-gradual-green" isBack="{{false}}">
     <view slot="content">关于</view>
 </cu-custom>
 
 <scroll-view scroll-y class="scrollPage">
     <view class="UCenter-bg" style="background-image:url(/images/user_index.png)">
         <image src="/images/logo.png" class="png" mode="widthFix" bindtap="toLogin"></image>
-        <view class="text-xl">ColorUI组件库
-            <text class="text-df">v2.0</text>
-        </view>
+        <view class="text-xl">{{userData.userID}}{{userData.userName}}</view>
         <view class="margin-top-sm">
-            <text>By:文晓港</text>
+            <text>{{identity}}</text>
         </view>
         <image src="https://raw.githubusercontent.com/weilanwl/ColorUI/master/demo/images/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+    </view>
+    <view class="bg-white padding">
+        <view class="flex flex-wrap justify-around" wx:if="{{userData !== ''}}">
+            <button class="cu-btn bg-blue animation-slide-bottom animation-reverse margin-sm basis-sm shadow" bindtap="quit">
+                退出登录
+            </button>
+        </view>
+
     </view>
 </scroll-view>
